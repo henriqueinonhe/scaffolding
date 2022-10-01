@@ -1,5 +1,7 @@
 # NextJS Template
 
+## Modules
+
 ## SSL/TLS
 
 It's always a good idea to make our development environment as close as possible to production, and as we'll (hopefully) be serving our application via HTTP**S**, it's useful to have SSL/TLS setup during development, especially if the backend we're connecting to during development is also being served over HTTPS, otherwise we may run into mixed context, CORS or cookies issues.

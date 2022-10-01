@@ -1,5 +1,5 @@
+import { getConfig } from "config";
 import { NextApiHandler } from "next";
-import { getConfig } from "../../config/config";
 
 const handler: NextApiHandler = async (req, res) => {
   const config = await getConfig();
