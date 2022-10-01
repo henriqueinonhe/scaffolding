@@ -1,8 +1,8 @@
-import { getConfig } from "config";
+import * as Config from "@/config";
 import { NextApiHandler } from "next";
 
 const handler: NextApiHandler = async (req, res) => {
-  const config = await getConfig();
+  const config = await Config.getConfig();
 
   // Check for secret to confirm this is a valid request
   if (req.query.secret !== config.server.revalidate.secret) {

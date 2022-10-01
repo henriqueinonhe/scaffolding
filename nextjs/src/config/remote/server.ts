@@ -1,5 +1,7 @@
-import { ServerFeatureFlags } from "../types";
-
-export const fetchServerRemoteConfig = async () => {
-  return { featureFlags: {} as ServerFeatureFlags };
+export const makeFetchServerRemoteConfig = () => async () => {
+  return { featureFlags: {} };
 };
+
+export type FetchServerRemoteConfig = ReturnType<
+  typeof makeFetchServerRemoteConfig
+>;

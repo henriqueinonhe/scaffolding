@@ -1,14 +1,22 @@
 import { readServerEnv } from "./env/server";
-import { fetchServerRemoteConfig } from "./remote/server";
+import { FetchServerRemoteConfig } from "./remote/server";
 
-export const getServerConfig = async () => {
-  const serverEnv = readServerEnv();
-  const serverRemoteConfig = await fetchServerRemoteConfig();
-
-  return {
-    revalidate: {
-      secret: serverEnv.REVALIDATE_SECRET,
-    },
-    featureFlags: serverRemoteConfig.featureFlags,
-  };
+type Dependencies = {
+  fetchServerRemoteConfig: FetchServerRemoteConfig;
 };
+
+export const makeGetServerConfig =
+  ({ fetchServerRemoteConfig }: Dependencies) =>
+  async () => {
+    const serverEnv = readServerEnv();
+    const serverRemoteConfig = await fetchServerRemoteConfig();
+
+    return {
+      revalidate: {
+        secret: serverEnv.REVALIDATE_SECRET,
+      },
+      featureFlags: serverRemoteConfig.featureFlags,
+    };
+  };
+
+export type GetServerConfig = ReturnType<typeof makeGetServerConfig>;
