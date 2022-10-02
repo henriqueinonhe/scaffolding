@@ -2,6 +2,10 @@
 
 ## Modules
 
+Modules are a way of organizing the codebase such that ...
+
+Each module is supposed to be treated kinda like a library, where any other module may only import stuff that is exported by the module's `index.ts` (barrel file), for these are considered to be the module's public interface.
+
 ## SSL/TLS
 
 It's always a good idea to make our development environment as close as possible to production, and as we'll (hopefully) be serving our application via HTTP**S**, it's useful to have SSL/TLS setup during development, especially if the backend we're connecting to during development is also being served over HTTPS, otherwise we may run into mixed context, CORS or cookies issues.

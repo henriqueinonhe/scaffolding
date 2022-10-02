@@ -1,5 +1,5 @@
-import { readServerEnv } from "./env/server";
-import { FetchServerRemoteConfig } from "./remote/server";
+import { readServerEnv } from "../env/readServerEnv";
+import { FetchServerRemoteConfig } from "../remote/fetchServerRemoteConfig";
 
 type Dependencies = {
   fetchServerRemoteConfig: FetchServerRemoteConfig;

@@ -1,5 +1,5 @@
-import { readPublicEnv } from "./env/public";
-import { FetchPublicRemoteConfig } from "./remote/public";
+import { readPublicEnv } from "../env/readPublicEnv";
+import { FetchPublicRemoteConfig } from "../remote/fetchPublicRemoteConfig";
 
 type Dependencies = {
   fetchPublicRemoteConfig: FetchPublicRemoteConfig;

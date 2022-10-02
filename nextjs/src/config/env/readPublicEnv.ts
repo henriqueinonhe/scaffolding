@@ -1,5 +1,5 @@
-import { cleanEnv, port, host, url, str } from "envalid";
-import { Environment } from "../types";
+import { cleanEnv, port, url, str } from "envalid";
+import { Environment } from "./Environment";
 
 export const readPublicEnv = () => {
   const publicEnvSchema = {
@@ -7,7 +7,7 @@ export const readPublicEnv = () => {
       choices: Object.values(Environment),
     }),
     PORT: port(),
-    APP_HOSTNAME: host(),
+    APP_HOSTNAME: str(),
     ASSETS_BASE_URL: url(),
   };
 

@@ -1,7 +1,8 @@
-import * as Config from "@/config";
+import { createContainer } from "@/container/container";
 import { NextApiHandler } from "next";
 
 const handler: NextApiHandler = async (req, res) => {
+  const { Config } = createContainer();
   const config = await Config.getConfig();
 
   // Check for secret to confirm this is a valid request
